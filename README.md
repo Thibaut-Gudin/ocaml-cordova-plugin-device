@@ -43,3 +43,16 @@ let _ =
   Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
   (Dom_html.handler on_device_ready) Js._false
 ```
+
+We also provide a function of type unit -> device Js.t which does returns the
+*device* object. You need to call it when the deviceready event is handled, eg
+
+```OCaml
+let on_device_ready =
+  let d = Device.device () in
+  (* Some code *)
+
+let _ =
+  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
+  (Dom_html.handler on_device_ready) Js._false
+```

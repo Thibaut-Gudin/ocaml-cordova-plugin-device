@@ -26,3 +26,5 @@ class type device =
     (* Serial *)
     method serial : Js.js_string Js.t Js.readonly_prop
   end
+
+let device () : device Js.t = Js.Unsafe.js_expr ("device")

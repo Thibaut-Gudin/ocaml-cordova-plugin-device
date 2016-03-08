@@ -26,3 +26,5 @@ class type device =
     (* Serial *)
     method serial : Js.js_string Js.t Js.readonly_prop
   end
+
+val device : unit -> device Js.t

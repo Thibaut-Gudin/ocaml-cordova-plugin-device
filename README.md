@@ -30,20 +30,6 @@ We don't provide a *device* variable in this plugin (as said in the official
 documentation on js_of_ocaml). If we did, *device* will be set to **undefined**
 because the *device* object doesn't exist when we create the variable.
 
-You need to create a variable of type Device.device Js.t in the *deviceready*
-event handler.
-So, use
-
-```OCaml
-let on_device_ready =
-  let d : Device.device Js.t = Js.Unsafe.js_expr ("device") in
-  (* Some code *)
-
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler on_device_ready) Js._false
-```
-
 We also provide a function of type unit -> device Js.t which does returns the
 *device* object. You need to call it when the deviceready event is handled, eg
 

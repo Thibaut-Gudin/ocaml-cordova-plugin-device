@@ -30,7 +30,7 @@ We don't provide a *device* variable in this plugin (as said in the official
 documentation on js_of_ocaml). If we did, *device* will be set to **undefined**
 because the *device* object doesn't exist when we create the variable.
 
-We also provide a function of type unit -> device Js.t which does returns the
+We provide a function of type unit -> device Js.t which does returns the
 *device* object. You need to call it when the deviceready event is handled, eg
 
 ```OCaml

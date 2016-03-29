@@ -1,30 +1,37 @@
-class type device =
+(* -------------------------------------------------------------------------- *)
+class device : Ojs.t ->
   object
-    method available : bool Js.t Js.readonly_prop
+    inherit Ojs.obj
+
+    method available      : bool
 
     (* smartphone platform *)
-    method platform : Js.js_string Js.t Js.readonly_prop
+    method platform       : string
 
     (* OS version *)
-    method version : Js.js_string Js.t Js.readonly_prop
+    method version        : string
 
     (* smartphone uuid *)
-    method uuid: Js.js_string Js.t Js.readonly_prop
+    method uuid           : string
 
     (* Cordova version *)
-    method cordova : Js.js_string Js.t Js.readonly_prop
+    method cordova        : string
 
     (* Smartphone model *)
-    method model : Js.js_string Js.t Js.readonly_prop
+    method model          : string
 
     (* If the application's running on a phone *)
-    method isVirtual : bool Js.t Js.readonly_prop
+    method is_virtual     : bool
 
     (* Manufacturer *)
-    method manufacturer : Js.js_string Js.t Js.readonly_prop
+    method manufacturer   : string
 
     (* Serial *)
-    method serial : Js.js_string Js.t Js.readonly_prop
+    method serial         : string
   end
+(* -------------------------------------------------------------------------- *)
 
-val device : unit -> device Js.t
+(* -------------------------------------------------------------------------- *)
+val t : unit -> device
+[@@js.get "device"]
+(* -------------------------------------------------------------------------- *)

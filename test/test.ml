@@ -1,1 +1,1 @@
-let d = Device.t () in d#platform ^ d#version
+let d = Cordova_device.t () in d#platform ^ d#version

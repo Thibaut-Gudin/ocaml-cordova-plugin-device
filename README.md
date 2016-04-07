@@ -63,13 +63,13 @@ See the official documentation
 The device plugin creates a new object called *device*, but the object is
 available when the *deviceready* event is handled.
 
-We provide a function Device.t of type unit -> device which does returns the
+We provide a function Cordova_device.t of type unit -> Cordova_device.device which does returns the
 *device* object. You need to call it when the deviceready event is handled, eg
 (with js_of_ocaml)
 
 ```OCaml
 let on_device_ready _ =
-  let d = Device.t () in
+  let d = Cordova_device.t () in
   (* Some code *)
 
 let _ =

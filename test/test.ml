@@ -1,1 +1,1 @@
-let d = Device.t () in d#available ^ d#platform ^ d#version
+let d = Device.t () in d#platform ^ d#version

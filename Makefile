@@ -1,8 +1,4 @@
-################################################################################
-MLI_FILE		= cordova_device.mli
-## Name which will be used in -package with ocamlfind
-LIB_NAME		= cordova-plugin-device
-################################################################################
+include Makefile.conf
 
 ################################################################################
 CC				= ocamlc

@@ -58,22 +58,3 @@ cordova plugin add cordova-plugin-device
 
 See the official documentation
 [cordova-plugin-device](https://github.com/apache/cordova-plugin-device)
-
-## ! BE CAREFUL !
-
-The device plugin creates a new object called *device*, but the object is
-available when the *deviceready* event is handled.
-
-We provide a function Cordova_device.t of type unit -> Cordova_device.device which does returns the
-*device* object. You need to call it when the deviceready event is handled, eg
-(with js_of_ocaml)
-
-```OCaml
-let on_device_ready _ =
-  let d = Cordova_device.t () in
-  (* Some code *)
-
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler on_device_ready) Js._false
-```

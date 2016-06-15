@@ -1,37 +1,36 @@
 (* -------------------------------------------------------------------------- *)
-class device : Ojs.t ->
-  object
-    inherit Ojs.obj
+val available      : bool
+[@@js.global "device.available"]
 
-    method available      : bool
+(* smartphone platform *)
+val platform       : string
+[@@js.global "device.platform"]
 
-    (* smartphone platform *)
-    method platform       : string
+(* OS version *)
+val version        : string
+[@@js.global "device.version"]
 
-    (* OS version *)
-    method version        : string
+(* smartphone uuid *)
+val uuid           : string
+[@@js.global "device.uuid"]
 
-    (* smartphone uuid *)
-    method uuid           : string
+(* Cordova version *)
+val cordova        : string
+[@@js.global "device.cordova"]
 
-    (* Cordova version *)
-    method cordova        : string
+(* Smartphone model *)
+val model          : string
+[@@js.global "device.model"]
 
-    (* Smartphone model *)
-    method model          : string
+(* If the application's running on a phone *)
+val is_virtual     : bool
+[@@js.global "device.isVirtual"]
 
-    (* If the application's running on a phone *)
-    method is_virtual     : bool
+(* Manufacturer *)
+val manufacturer   : string
+[@@js.global "device.manufacturer"]
 
-    (* Manufacturer *)
-    method manufacturer   : string
-
-    (* Serial *)
-    method serial         : string
-  end
-(* -------------------------------------------------------------------------- *)
-
-(* -------------------------------------------------------------------------- *)
-val t : unit -> device
-[@@js.get "device"]
+(* Serial *)
+val serial         : string
+[@@js.global "device.serial"]
 (* -------------------------------------------------------------------------- *)

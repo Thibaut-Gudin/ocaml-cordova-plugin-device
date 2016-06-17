@@ -1,36 +1,30 @@
 (* -------------------------------------------------------------------------- *)
-val available      : bool
-[@@js.global "device.available"]
+val available : unit -> bool
+[@@js.get "device.available"]
 
 (* smartphone platform *)
-val platform       : string
-[@@js.global "device.platform"]
+val platform : unit -> string
+[@@js.get "device.platform"]
 
 (* OS version *)
-val version        : string
-[@@js.global "device.version"]
+val version : unit -> string
+[@@js.get "device.version"]
 
-(* smartphone uuid *)
-val uuid           : string
-[@@js.global "device.uuid"]
+val uuid : unit -> string
+[@@js.get "device.uuid"]
 
-(* Cordova version *)
-val cordova        : string
-[@@js.global "device.cordova"]
+val cordova : unit -> string
+[@@js.get "device.cordova"]
 
-(* Smartphone model *)
-val model          : string
-[@@js.global "device.model"]
+val model : unit -> string
+[@@js.get "device.model"]
 
-(* If the application's running on a phone *)
-val is_virtual     : bool
-[@@js.global "device.isVirtual"]
+val serial : unit -> string
+[@@js.get "device.serial"]
 
-(* Manufacturer *)
-val manufacturer   : string
-[@@js.global "device.manufacturer"]
+val manufacturer : unit -> string
+[@@js.get "device.manufacturer"]
 
-(* Serial *)
-val serial         : string
-[@@js.global "device.serial"]
+val is_virtual : unit -> bool
+[@@js.get "device.isVirtual"]
 (* -------------------------------------------------------------------------- *)

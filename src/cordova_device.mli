@@ -20,13 +20,3 @@ val manufacturer : unit -> string [@@js.get "device.manufacturer"]
 val is_virtual : unit -> bool [@@js.get "device.isVirtual"]
 
 (* -------------------------------------------------------------------------- *)
-
-[@@@js.stop]
-
-val test_global : unit -> bool
-
-[@@@js.start]
-
-[@@@js.implem
-let test_global () =
-  Js_of_ocaml.Js.Optdef.test Js_of_ocaml.Js.Unsafe.global##.device]

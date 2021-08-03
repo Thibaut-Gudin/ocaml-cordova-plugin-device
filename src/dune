@@ -1,0 +1,12 @@
+(rule
+ (targets cordova_device.ml)
+ (deps cordova_device.mli)
+ (action (run %{bin:gen_js_api} %{deps})))
+
+(library
+ (public_name cordova-plugin-device)
+ (name cordova_device)
+ (modes byte)
+ (libraries gen_js_api js_of_ocaml js_of_ocaml-ppx)
+ (preprocess (pps js_of_ocaml-ppx))
+)
